@@ -1,0 +1,4 @@
+# Project exclude paths
+/rain-controller/target/
+/rain-dao/target/
+/rain-service/target/

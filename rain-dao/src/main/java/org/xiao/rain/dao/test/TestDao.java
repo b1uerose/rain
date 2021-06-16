@@ -1,0 +1,15 @@
+package org.xiao.rain.dao.test;
+
+/**
+ * description
+ * Author: xiaojl
+ * Date: 2021/6/14 14:53
+ */
+public class TestDao {
+    
+    public static void testDao() {
+        System.out.println("test dao......");
+    }
+    
+    
+}
