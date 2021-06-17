@@ -28,7 +28,7 @@ public class TestService {
     }
     
     private static void testHello() {
-        
+        System.out.println("TestService.testHello");
         
     }
     
