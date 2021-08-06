@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>rain-controller</artifactId>
-    <version>1.0</version>
     <packaging>war</packaging>
 
     <parent>
@@ -25,7 +24,7 @@
             <properties>
                 <env>dev</env>
             </properties>
-            <!--未指定环境是，默认为生产环境 -->
+            <!--未指定环境是，默认为开发环境 -->
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>

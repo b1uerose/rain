@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+<!--    <bean id="corp" class="org.xiao.rain.vo.corp.CorpVo">-->
+<!--        <property name="vcode" value="001"/>-->
+<!--        <property name="vname" value="中国石油"/>-->
+<!--        <property name="pk_corp" value="0001"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="user" class="org.xiao.rain.service.user.UserVo" autowire="byType">-->
+<!--        <property name="vname" value="肖金龙"/>-->
+<!--        <property name="vcode" value="xiaojl"/>-->
+<!--        <property name="iage" value="32"/> &lt;!&ndash; xml的规则,值都是要放在双引号之间&ndash;&gt;-->
+<!--    </bean>-->
+<!--    -->
+<!--    <bean id="user2" class="org.xiao.rain.service.user.UserVo">-->
+<!--        <constructor-arg name="vname" value="肖金龙"/>-->
+<!--        <constructor-arg name="vcode" value="xiaojl"/>-->
+<!--        <constructor-arg name="iage" value="33"/>-->
+<!--        <constructor-arg name="corp" ref="corp"/>-->
+<!--    </bean>-->
+<!--    -->
+<!--    <bean id="myDate" class="java.util.Date">-->
+<!--        <property name="time" value="1111111222111"/>-->
+<!--    </bean>-->
+</beans>
