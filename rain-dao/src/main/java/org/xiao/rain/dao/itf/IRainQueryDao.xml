@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.xiao.rain.dao.itf.IRainQueryDao">
+    <select id="queryUserVos" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user
+    </select>
+    
+    <insert id="insertUser">
+        insert into bd_user(pk_user, vusername, vusercode, vpassword) values (#{pk_user}, #{vusername}, #{vusercode}, #{vpassword});
+    </insert>
+
+    <!--一个简单类型 #{参数内容自定义}-->
+    <select id="queryUserByUserName" resultType="uservo">
+        select * from bd_user where vusername = #{vusername111}
+    </select>
+
+    <!--多个类型@param("name") @param("code")-->
+    <select id="queryUserVosByMultiParams" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user where vusername = #{name} and vusercode = #{code}
+    </select>
+    
+    <!--使用参数对象 #{对象里的属性}-->
+    <select id="queryUserVosByQueryParams" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user where vusername = #{vname} and vusercode = #{vcode}
+    </select>
+    
+    <!--多个参数，按位置来取参数-->
+    <select id="queryUserVosByArg" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user where vusercode = #{arg0} and vusername = #{arg1}
+    </select>
+    
+    <!--多个参数，根据map中的key来取值-->
+    <select id="queryUsersByMap" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user where vusercode = #{mycode} and vusername = #{myname}
+    </select>
+    
+    <!--返回一个hashmap-->
+    <select id="queryUserResultTypeIsMap" resultType="java.util.HashMap">
+        select vusername as name, vusercode code from bd_user where vusername like #{name}
+    </select>
+    
+    <resultMap id="userMap" type="org.xiao.rain.vo.user.UserVo">
+        <id column="pk" property="pk_user"/>
+        <result column="name" property="vusername"/>
+        <result column="code" property="vusercode"/>
+    </resultMap>
+    
+    <select id="queryUsersByResultMap" resultMap="userMap">
+        select pk_user as pk,vusername as name, vusercode as code from bd_user where vusername = #{vusername}
+    </select>
+    
+    <select id="queryUsersByDiffColumnName" resultType="org.xiao.rain.vo.myuser.MyUserVo">
+        select pk_user as pk, vusercode, vusername from bd_user order by vusercode
+    </select>
+    
+    <select id="queryUsersByLike" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user where vusername like concat('%', #{likeusername}, '%')   
+    </select>
+    
+    <select id="queryUsersByIf" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user where 1 = 1
+        <if test="vusername != null and vusername !=''">
+            and vusername = #{vusername}
+        </if>
+
+    </select>
+    
+    <select id="queryUserByWhereCond" resultType="org.xiao.rain.vo.user.UserVo">
+        select * from bd_user
+        <where>
+            <if test="vusername!=null and vusername != ''">
+                and vusername = #{vusername}
+            </if>
+            <if test="vusercode!=null and vusercode != ''">
+                and vusercode = #{vusercode}
+            </if>
+        </where>
+
+    </select>
+    
+    
+</mapper>
