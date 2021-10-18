@@ -12,12 +12,18 @@ import org.xiao.rain.service.itf.IRainQueryService;
 public class AspectController {
 
     public static void main(String[] args) {
-        
         String path = "applicationContext.xml";
         ApplicationContext context = new ClassPathXmlApplicationContext(path);
-
+        
+        String[] beanNames = context.getBeanDefinitionNames();
+        for (String beanName : beanNames) {
+            System.out.println("bean:" + beanName +"|" + context.getBean(beanName));
+        }
+        
+        
         IRainQueryService service = (IRainQueryService) context.getBean("queryService");
         try {
+            
             String retmsg = service.doSome();
             System.out.println(retmsg);
             System.out.println("==============");

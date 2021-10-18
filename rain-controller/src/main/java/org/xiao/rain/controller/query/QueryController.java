@@ -16,7 +16,6 @@ import java.lang.reflect.Proxy;
  */
 @Controller
 public class QueryController {
-
     public static void main(String[] args) {
         String path = "applicationContext.xml";
         ApplicationContext context = new ClassPathXmlApplicationContext(path);
