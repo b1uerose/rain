@@ -10,5 +10,6 @@ public class GitTest02 {
         System.out.println("test01");
         System.out.println("test02-hotfix");
         System.out.println("conflicts master");
+        System.out.println("hot-fix conflict");
     }
 }
