@@ -1,6 +1,9 @@
 package org.xiao.rain.service.itf;
 
 import org.xiao.rain.exception.BusinessException;
+import org.xiao.rain.vo.user.UserVo;
+
+import java.util.List;
 
 /**
  * 查询服务
@@ -18,6 +21,10 @@ public interface IRainQueryService {
     public String doException();
     
     public String doAfter();
+    
+    public List<UserVo> queryUserVos();
+    
+    public int insertData();
     
     
 }

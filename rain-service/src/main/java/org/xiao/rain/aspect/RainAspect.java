@@ -64,7 +64,7 @@ public class RainAspect {
         System.out.println("不管怎么样，代码都会执行，相当于finally");
     }
     
-    @Pointcut("execution(* *..service.impl.*.doAfter(..))")
+    @Pointcut("execution(* *..service.impl.*.do*(..))")
     public void myCut() {
         
     }

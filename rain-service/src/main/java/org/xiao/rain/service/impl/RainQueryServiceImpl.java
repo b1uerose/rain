@@ -1,11 +1,13 @@
 package org.xiao.rain.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.xiao.rain.dao.itf.IRainQueryDao;
 import org.xiao.rain.exception.BusinessException;
 import org.xiao.rain.service.itf.IRainQueryService;
+import org.xiao.rain.vo.user.UserVo;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Author: xiaojl
@@ -14,13 +16,15 @@ import org.xiao.rain.service.itf.IRainQueryService;
 @Service("queryService")
 public class RainQueryServiceImpl implements IRainQueryService {
     
-    @Autowired
-    @Qualifier("queryDao")
+//    @Autowired
+//    @Qualifier("queryDao")
+    //注入mybatis生成的代理对象
+    @Resource(name = "IRainQueryDao")
     private IRainQueryDao dao;
     
     @Override
     public String doSome() throws BusinessException {
-        return dao.querySomeThing();
+        return "dosome";
     }
 
     @Override
@@ -41,5 +45,20 @@ public class RainQueryServiceImpl implements IRainQueryService {
     @Override
     public String doAfter() {
         return "" + 100/0;
+    }
+
+    @Override
+    public List<UserVo> queryUserVos() {
+        return dao.queryUsersByLike("肖%");
+    }
+
+    @Override
+    public int insertData() {
+        UserVo vo = new UserVo();
+        vo.setPk_user("test00002");
+        vo.setVusercode("test00002");
+        vo.setVusername("test00002");
+        vo.setVpassword("test00002");
+        return dao.insertUser(vo);
     }
 }
