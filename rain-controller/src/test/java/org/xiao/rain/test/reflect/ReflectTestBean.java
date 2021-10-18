@@ -1,5 +1,7 @@
 package org.xiao.rain.test.reflect;
 
+import org.xiao.rain.exception.BusinessException;
+
 /**
  * Author: xiaojl
  * Date: 2021/7/12 22:12
@@ -18,6 +20,12 @@ public class ReflectTestBean {
 
     public ReflectTestBean() {
         
+    }
+    
+    public void testException() throws Exception {
+        if(true) {
+            throw new BusinessException("测试反射报错");
+        }
     }
 
     @Override

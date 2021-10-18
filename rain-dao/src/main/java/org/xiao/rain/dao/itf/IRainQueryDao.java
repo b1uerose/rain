@@ -98,5 +98,12 @@ public interface IRainQueryDao {
      * @return
      */
     public List<UserVo> queryUserByWhereCond(UserVo vo);
+
+    /**
+     * mybatis 动态生成in
+     * @param userNameList
+     * @return
+     */
+    public List<UserVo> queryUsersByList(List<String> userNameList);
     
 }

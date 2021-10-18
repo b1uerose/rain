@@ -91,4 +91,11 @@ public class RainQueryDaoImpl implements IRainQueryDao {
     public List<UserVo> queryUserByWhereCond(UserVo vo) {
         return null;
     }
+
+    @Override
+    public List<UserVo> queryUsersByList(List<String> userNameList) {
+        
+        
+        return null;
+    }
 }

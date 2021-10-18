@@ -32,10 +32,11 @@ public class IntegerTest01 {
         
         //string->intger
         
-        Integer it2 = Integer.valueOf("123");
+        Integer it2 = Integer.valueOf("01");
         //integer - >String
         
         String s2 = String.valueOf(it2);
+        
         
         
     }

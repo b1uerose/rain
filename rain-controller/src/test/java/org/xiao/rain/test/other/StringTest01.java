@@ -8,8 +8,18 @@ public class StringTest01 {
 
     public static void main(String[] args) {
         
-        String ori = "1234,33212,absc1234";
-        System.out.println(ori.indexOf("133212"));
+        String vusername = "051001900211";
+        
+        String string = vusername.substring(10,12);
+        System.out.println(string);
+        
+        
+        String formula = "freplyvalue->finitloss+nadminfreplyvalue";
+
+        
+        int index = formula.lastIndexOf("vreplyitemdoc");
+        
+        
         
     }
 }

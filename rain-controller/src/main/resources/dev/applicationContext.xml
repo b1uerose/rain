@@ -2,21 +2,73 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans.xsd 
        http://www.springframework.org/schema/context 
        https://www.springframework.org/schema/context/spring-context.xsd 
        http://www.springframework.org/schema/aop 
-       https://www.springframework.org/schema/aop/spring-aop.xsd">
+       https://www.springframework.org/schema/aop/spring-aop.xsd 
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="maxActive" value="20"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--指定数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--指定mybatis的主配置文件-->
+        <property name="configLocation" value="classpath:MyBatis-config.xml"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--指定sqlsessionfaactory-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!--扫描指定包，每个接口对象创建一个代理对象并放到spring的容器中-->
+        <property name="basePackage" value="org.xiao.rain.dao.itf"/>
+    </bean>
     
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="buy" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Exception"/>
+            <tx:method name="buy2" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Exception"/>
+            <tx:method name="*_RequiresNew" propagation="REQUIRES_NEW" rollback-for="java.lang.Exception"/>
+            <tx:method name="*_Nested" propagation="NESTED" rollback-for="java.lang.Exception"/>
+            <tx:method name="*_Never" propagation="NEVER" rollback-for=""/>
+        </tx:attributes>
+    </tx:advice>
+    
+    <aop:config>
+        <aop:pointcut id="pointcut" expression="execution(* *..service.impl.*BusinessImpl.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"/>
+    </aop:config>
+    
+<!--    <bean id="buyGoodService" class="org.xiao.rain.service.impl.IBuyGoodBusinessImpl">-->
+<!--        <property name="iGoodDao" ref="IGoodDao"/>-->
+<!--        <property name="iOrderDao" ref="IOrderDao"/>-->
+<!--    </bean>-->
+    
+<!--    告诉spring使用注解的方式管理事务-->
+<!--    <tx:annotation-driven transaction-manager="transactionManager"/>-->
+
     <context:component-scan base-package="org.xiao.rain.vo"/>
     <context:component-scan base-package="org.xiao.rain.service"/>
     <context:component-scan base-package="org.xiao.rain.dao"/>
     <context:component-scan base-package="org.xiao.rain.aspect"/>
-    
-<!--    <aop:aspectj-autoproxy/>-->
-<!--    告诉框架使用cglib动态代理-->
-    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
+    <aop:aspectj-autoproxy/>
+    <!--    告诉框架使用cglib动态代理-->
+<!--    <aop:aspectj-autoproxy proxy-target-class="true"/>-->
 </beans>
