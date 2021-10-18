@@ -1,6 +1,6 @@
 package org.xiao.rain.test.io;
 
-import org.xiao.rian.test.bean.UserVo;
+import org.xiao.rain.test.bean.UserVo;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

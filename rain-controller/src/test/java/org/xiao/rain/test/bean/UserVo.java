@@ -1,4 +1,4 @@
-package org.xiao.rian.test.bean;
+package org.xiao.rain.test.bean;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package org.xiao.rain.text.spring.mybatis;
+package org.xiao.rain.test.spring.mybatis;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
