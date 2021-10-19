@@ -15,5 +15,6 @@ public class GitTest {
         System.out.println("hello hot-fix");
 
         System.out.println("测试远程分支");
+        System.out.println("测试远程分支2");
     }
 }
