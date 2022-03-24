@@ -1,10 +1,16 @@
 package org.xiao.rain.test.collection;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.xiao.rain.test.type.Human;
 import org.xiao.rain.test.type.Parent;
 import org.xiao.rain.test.type.Son;
-
-import java.util.*;
 
 /**
  * 
@@ -14,8 +20,10 @@ import java.util.*;
 public class ArrayListTest01 {
 
     public static void main(String[] args) {
+
+        ArrayList<String> list = new ArrayList<String>();
         
-        List<String> list = new ArrayList<String>();
+        list.toArray(new String[0]);
         
         List<? extends Human> list2 = new ArrayList<>();
         

@@ -29,5 +29,13 @@ public class DateTest01 {
         } catch (ParseException e) {
         }
         
+//        String abc = "null";
+//
+//        try {
+//            sdf2.parse(abc);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+
     }
 }

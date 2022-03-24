@@ -5,6 +5,9 @@ package org.xiao.rain.test.jvm;
  * Date: 2021/10/3 22:07
  */
 public class JVMConstantPoolTest {
+    
+    private static int a = 100;
+    private final static int b = 200;
 
     public static void main(String[] args) {
         

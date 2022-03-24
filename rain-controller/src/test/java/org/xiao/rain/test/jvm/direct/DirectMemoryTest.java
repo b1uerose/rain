@@ -18,8 +18,16 @@ public class DirectMemoryTest {
     static final int _1Mb = 1024 * 1024;
 
     public static void main(String[] args) {
-        io(); // io 用时：1535.586957 1766.963399 1359.240226
+//        io(); // io 用时：1535.586957 1766.963399 1359.240226
         directBuffer(); // directBuffer 用时：479.295165 702.291454 562.56592
+        System.gc();
+
+
+        try {
+            Thread.sleep(1000000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void directBuffer() {

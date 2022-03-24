@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * -Xmx10m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/xiao/Desktop/xxx.hprof
+ * -Xmx10m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/xiao/Desktop/dump/oomheapdump.hprof
  * Author: xiaojl
  * Date: 2021/7/21 23:20
  */
@@ -15,7 +15,7 @@ public class OOMTest02 {
         List<String> list = new ArrayList<String>();
         while (true) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

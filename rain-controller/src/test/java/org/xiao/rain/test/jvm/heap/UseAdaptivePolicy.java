@@ -7,7 +7,7 @@ package org.xiao.rain.test.jvm.heap;
  * Author: xiaojl
  * Date: 2021/7/19 22:47
  * 命令行查看 jps 查看进程
- * 然后 jinfo -flag SurviviorRatio 进程
+ * 然后 jinfo -flag SurviviorRatio <进程id>
  */
 public class UseAdaptivePolicy {
     public static void main(String[] args) {

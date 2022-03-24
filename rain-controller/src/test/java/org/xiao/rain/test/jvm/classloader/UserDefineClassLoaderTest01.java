@@ -13,9 +13,11 @@ public class UserDefineClassLoaderTest01 extends ClassLoader {
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         
+        byte[] classBytes = getClass(name);
         
+        defineClass(name, classBytes, 0, classBytes.length);
         
-        return super.findClass(name);
+        return defineClass(name, classBytes, 0, classBytes.length);
     }
     
     private byte[] getClass(String name)  {
