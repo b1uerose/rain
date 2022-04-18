@@ -1,9 +1,9 @@
 package org.xiao.rain.service.test;
 
-import org.xiao.rain.dao.test.TestDao;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.xiao.rain.dao.test.TestDao;
 
 
 /**
@@ -27,7 +27,7 @@ public class TestService {
         testHello();
     }
     
-    private static void testHello() {
+    public static void testHello() {
         System.out.println("TestService.testHello");
         
     }
