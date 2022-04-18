@@ -1,5 +1,6 @@
 package org.xiao.rain.test.spring.ioc;
 
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.xiao.rain.service.impl.RainQueryServiceImpl;
@@ -17,7 +18,7 @@ public class SpringTest01 {
         System.out.println(retMsg);
     }
     
-//    @Test
+    @Test
     public void test02() throws Exception {
         //1、指定spring的路径
         String path = "beans.xml";

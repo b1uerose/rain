@@ -1,4 +1,4 @@
-package org.xiao.rain.test.datastructrue.dynamicprogramming;
+package org.xiao.rain.test.datastructure.dynamicprogramming;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package org.xiao.rain.test.datastructrue.dynamicprogramming;
+package org.xiao.rain.test.datastructure.dynamicprogramming;
 
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class ExistsSubSet {
     
     @Test
     public void test() {
-        
+        System.out.println("1233");
         int[] array = new int[]{3,34,4,12,5,2};
 
         System.out.println(subset_recursive(array, array.length-1, 9));
