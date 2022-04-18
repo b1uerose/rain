@@ -105,9 +105,6 @@
     <build>
         <finalName>rain</finalName>
         <resources>
-            <resource>
-                <directory>src/main/resources/${env}</directory>
-            </resource>
             <!--打包时，也要打包src/main/java里面的xml和properties配置文件-->
             <resource>
                 <directory>src/main/java</directory>
