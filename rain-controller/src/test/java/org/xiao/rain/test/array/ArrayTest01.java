@@ -32,6 +32,7 @@ public class ArrayTest01 implements Comparable {
             e.printStackTrace();
         }
 
+
     }
 
     private void dosome() {
