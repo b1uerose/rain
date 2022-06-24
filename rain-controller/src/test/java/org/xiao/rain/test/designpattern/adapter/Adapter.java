@@ -1,6 +1,7 @@
 package org.xiao.rain.test.designpattern.adapter;
 
 /**
+ * 适配器
  * Author: xiaojl
  * Date: 2021/8/24 23:00
  */
