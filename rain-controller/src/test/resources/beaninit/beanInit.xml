@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--       default-init-method="init" default-destroy-method="destroy">-->
+<!--       上面是给所有的bean执行初始化和销毁的方法-->
+
+<!--    给每一个bean设置初始化和销毁的方法-->
+<!--    <bean id="initbean" class="org.xiao.rain.test.spring.ioc.beaninit.InitBean" init-method="init" destroy-method="destroy"/>-->
+    <bean id="initbean" class="org.xiao.rain.test.spring.ioc.beaninit.InitBean"/>
+    <context:component-scan base-package="org.xiao.rain.test.spring.ioc.beaninit"/>
+</beans>

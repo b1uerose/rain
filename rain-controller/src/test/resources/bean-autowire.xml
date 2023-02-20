@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    byName 
+        1、bean的id必须和属性名一致
+        2、bean的类型必须和属性的类型一致
+       -->
+    
+    <bean id="student" class="org.xiao.rain.test.spring.ioc.di.setter.autowire.Student" autowire="byName">
+        <property name="name" value="stud1"/>
+        <property name="age" value="20"/>
+    </bean>
+    
+    <bean id="school" class="org.xiao.rain.test.spring.ioc.di.setter.autowire.School">
+        <property name="name" value="清华大学"/>
+    </bean>
+</beans>

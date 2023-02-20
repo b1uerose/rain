@@ -1,11 +1,12 @@
 package org.xiao.rain.test.lambda;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
+
+import org.junit.Test;
 
 /**
  * lambda表达式
@@ -32,6 +33,12 @@ public class LambdaTest01 {
         List<Integer> list1 = new ArrayList<Integer>();
         Collections.addAll(list1, 1,2,3,4,5,6,7,8,9,10);
         
+        Collections.sort(list1, (a, b) -> a-b);
+        
+        Collections.sort(list1, this::comare);
+        
+        Collections.sort(list1, Integer :: compareTo);
+        
         list1.forEach(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) {
@@ -40,6 +47,15 @@ public class LambdaTest01 {
         });
         System.out.println("==============");
         list1.forEach(System.out::println);
+
+
+        Function<Integer, ArrayList> func = ArrayList::new;
+        
+        
+    }
+    
+    public int comare(int a, int b) {
+        return a - b;
     }
     
 }

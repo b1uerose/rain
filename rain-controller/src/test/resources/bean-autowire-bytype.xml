@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    
+        byType 有三种
+        1、类型相同
+        2、bean是子类，属性是父类
+        3、bean是实现类，属性是接口
+        -->
+    <bean id="student" class="org.xiao.rain.test.spring.ioc.di.setter.autowire.bytype.Student" autowire="byType">
+        <property name="name" value="byType"/>
+        <property name="age" value="22"/>
+    </bean>
+    
+<!--    <bean id="mySchool" class="org.xiao.rain.test.spring.ioc.di.setter.autowire.bytype.School">-->
+<!--        <property name="name" value="bytype清华大学-相同类型"/>-->
+<!--    </bean>-->
+<!--    <bean id="mySchool2" class="org.xiao.rain.test.spring.ioc.di.setter.autowire.bytype.School2">-->
+<!--        <property name="name" value="bytype清华大学-bean是子类"/>-->
+<!--    </bean>-->
+    <bean id="mySchool3" class="org.xiao.rain.test.spring.ioc.di.setter.autowire.bytype.School3">
+        <property name="name" value="bytype清华大学-用的是接口"/>
+    </bean>
+</beans>

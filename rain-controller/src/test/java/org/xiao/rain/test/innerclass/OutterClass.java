@@ -6,20 +6,31 @@ package org.xiao.rain.test.innerclass;
  */
 public class OutterClass {
     
-    class startAddr {
-        public startAddr() {
+    public class StartAddr {
+        public StartAddr() {
+            System.out.println("内部类" + this.getClass().getSimpleName());
         }
     }
     
-    class endAddr {
-        public endAddr() {
+    public class EndAddr {
+        public EndAddr() {
+            System.out.println("内部类" + this.getClass().getSimpleName());
         }
     }
 
     public static void main(String[] args) {
+        
+        OutterClass outterClass = new OutterClass();
+        StartAddr startAddr = outterClass.new StartAddr();
+        
+        
     }
     
-    public void doSome() {
-        OutterClass.startAddr startaddr = new OutterClass.startAddr();
-    }
+//    public void doSome() {
+//        OutterClass.StartAddr startaddr = new OutterClass.StartAddr();
+//        
+//        OutterClass outClass = new OutterClass();
+//        
+//        StartAddr startAddr = outClass.new StartAddr();
+//    }
 }

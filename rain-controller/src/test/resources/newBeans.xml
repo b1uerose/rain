@@ -4,8 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--    <bean id="springioc" class="org.xiao.rain.test.spring.ioc.beans.SpringIOCService"/>-->
-    
-    <bean id = "springiocservice" class = "org.xiao.rain.test.spring.ioc.beans.SpringIOCService">
-<!--        <property name="child01" ref="child01"/>-->
+    <import resource="childrenBeans.xml"/>
+    <bean id="springiocservice" class="org.xiao.rain.test.spring.ioc.beans.SpringIOCService">
+        <property name="child01" ref="child01"/>
     </bean>
+    
+    <alias name="springiocservice" alias="iocService1"/>   
+    
+    <bean id="innderClassBean" class="org.xiao.rain.test.spring.ioc.beans.SpringTestInnerClass$InnerClass"/>
+    
 </beans>

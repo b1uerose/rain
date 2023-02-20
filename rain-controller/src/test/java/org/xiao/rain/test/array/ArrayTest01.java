@@ -2,6 +2,9 @@ package org.xiao.rain.test.array;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.Arrays;
+
+import org.junit.Test;
 
 /**
  * 数组是对象，父类是Object
@@ -42,6 +45,17 @@ public class ArrayTest01 implements Comparable {
     @Override
     public int compareTo(Object o) {
         return 0;
+    }
+    
+    @Test
+    public void testArrayComponent() {
+        String[] array1 = new String[]{"111", "222"};
+        System.out.println(array1.getClass().getComponentType());
+        String[] array2 = new String[]{"333"};
+        String[] newStringArray = Arrays.copyOf(array1, array1.length + array2.length);
+        System.arraycopy(array2, 0, newStringArray, array1.length, array2.length);
+        System.out.println(Arrays.toString(newStringArray));
+
     }
 }
 

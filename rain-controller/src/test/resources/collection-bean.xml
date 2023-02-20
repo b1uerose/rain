@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="collections" class="org.xiao.rain.test.spring.ioc.di.setter.collection.CollectionsDI">
+        
+        <property name="properties">
+            <props>
+                <prop key="key1">1111</prop>
+                <prop key="key2">"hello"</prop>
+            </props>
+        </property>
+        
+        <property name="map">
+            <map>
+                <entry key="entry1" value="abcd"/>
+                <entry key="entry2" value-ref="aValue"/>
+            </map>
+        </property>
+        
+        <property name="list">
+            <list>
+                <value>a element of list</value>
+                <ref bean="aValue"/>
+            </list>
+        </property>
+        
+        <property name="set">
+            <set>
+                <value>a element of set</value>
+                <ref bean="aValue"/>
+            </set>
+        </property>
+        
+    </bean>
+    
+    <bean id="aValue" class="java.lang.Object"/>
+</beans>

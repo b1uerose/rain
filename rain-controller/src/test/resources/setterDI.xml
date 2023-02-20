@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="setterBean" class="org.xiao.rain.test.spring.ioc.di.setter.SetterDIBean">
+        <property name="age" value="24"/>
+        <property name="name" value="user1"/>
+        <property name="info" ref="info"/>
+    </bean>
+    
+    <bean id="p_namespace" class="org.xiao.rain.test.spring.ioc.di.setter.SetterDIBean"
+          p:age="44" p:name="user2" p:info-ref="info"/>
+    
+    <bean id="info" class="org.xiao.rain.test.spring.ioc.di.setter.OtherInfo"/>
+</beans>

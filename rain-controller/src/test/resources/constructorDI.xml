@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    构造函数注入方式-->
+    
+    <bean id="child01" class="org.xiao.rain.test.spring.ioc.di.constructor.ConstructorDIChild01"/>
+    <bean id="child02" class="org.xiao.rain.test.spring.ioc.di.constructor.ConstructorDIChild02"/>
+    <bean id="parent" class="org.xiao.rain.test.spring.ioc.di.constructor.ConstructorDIParent">
+        <constructor-arg name="child01" ref="child01"/>
+        <constructor-arg name="child02" ref="child02"/>
+    </bean>
+    
+    <bean id="parent2" class="org.xiao.rain.test.spring.ioc.di.constructor.ConstructorDIParent"
+          c:child01-ref="child01" c:child02-ref="child02"/>
+    
+    <bean id="user1" class="org.xiao.rain.test.spring.ioc.di.constructor.ConstructorDIParent2">
+        <constructor-arg type="int" value="34"/>
+        <constructor-arg type="java.lang.String" value="user1"/>
+    </bean>
+    
+    
+    
+    <bean id="user2" class="org.xiao.rain.test.spring.ioc.di.constructor.ConstructorDIParent2">
+        <constructor-arg name="name" value="user2"/>
+        <constructor-arg name="age" value="33"/>
+    </bean>
+    
+    <bean id="user3" class="org.xiao.rain.test.spring.ioc.di.constructor.ConstructorDIParent2" 
+          c:name="user3" c:age="5"/>
+    
+</beans>
