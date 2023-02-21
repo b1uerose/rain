@@ -99,13 +99,7 @@
             <artifactId>commons-codec</artifactId>
             <version>1.15</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.rain</groupId>
-            <artifactId>aspdf</artifactId>
-            <version>1.0.4</version>
-        </dependency>
-
+        
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
